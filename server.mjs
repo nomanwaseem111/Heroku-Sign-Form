@@ -10,13 +10,13 @@ const port = process.env.PORT || 3000
 
 let userBase = [];
 
-app.post('/signup', (req,res) => {
+app.post('/signup', (req, res) => {
 
-     let body = req.body;
+    let body = req.body;
 
-     if(!body.firstname || !body.lastname || !body.email || !body.password){
- 
-         res.status(400).send(`
+    if (!body.firstname || !body.lastname || !body.email || !body.password) {
+
+        res.status(400).send(`
          Required all Field, for example
          
          {
@@ -26,84 +26,40 @@ app.post('/signup', (req,res) => {
             password : "1234",
          }
          `)
-         return;
+        return;
+    }
+
+    let isFound = false;
+
+    for (let i = 0; i < userBase.length; i++) {
+        if (userBase[i].email === body.email.toLowerCase()) {
+            isFound = true;
+            break;
         }
+    }
+    if (isFound) {
+        res.status(400).send({message : "This Email Id is Already Exist"});
+    }
 
 
-        let newUser = {
-            userId : nanoid(),
-            firstname : body.firstname,
-            lastname : body.lastname,
-            email : body.email,
-            password : body.password,
-        }
+    let newUser = {
+        userId: nanoid(),
+        firstname: body.firstname,
+        lastname: body.lastname,
+        email: body.email.toLowerCase(),
+        password: body.password,
+    }
 
-        userBase.push(newUser);
+    userBase.push(newUser);
 
-        res.status(201).send({message : 'User is Created'})
+    res.status(201).send({ message: 'User is Created' })
 
 })
 
 
 
-app.post('/login', (req,res) =>{
-
-    let body = req.body;
-
-     if(!body.email || !body.password){
- 
-         res.status(400).send(`
-         Required all Field, for example
-         
-         {
-          
-            email : "noman@abc.com",
-            password : "1234",
-         }
-         `)
-         return;
-        }
-
-        let isFound = false;
-
-        for(let i = 0; i < userBase.length; i++){
-
-            if(userBase[i].email === body.email){
-
-                isFound = true; 
-              if(userBase[i].password === body.password){
-
-
-                 res.status(200).send(
-                    {
-                        
-                       firstname:  userBase[i].firstname,
-                       lastname:  userBase[i].lastname,
-                       email:  userBase[i].email,
-                       message : "Login Successful"
-                    })
-                    return
-                 
-              }else{
-                res.status(404).send('Password Incorrect')
-                
-               }
-               return;
-
-            }
-        }
-
-         
-        if(!isFound){
-            res.status(401).send({message : 'user not Found'});
-            return;
-        }
-
-
-    
-})
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
 
