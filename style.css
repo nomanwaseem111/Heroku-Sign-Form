@@ -1,0 +1,172 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Macondo', cursive;
+font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-color: #79589f;
+    width: 100%;
+    height: 100vh;
+    
+}
+form{
+
+    margin-left: 550px;
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 600px;
+    padding: 30px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+
+}
+
+img{
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    margin-left: 680px;
+}
+
+#btn{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #79589f;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#btn:hover{
+    border-color: #60467e;
+}
+label{
+padding-bottom: 10px;
+display: inline-block;
+color: #62748e;
+}
+
+input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-color: black;
+    font-size: 24px;
+}
+
+h3{
+    color: #664986;
+    font-size: 26px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#message{
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a{
+   margin-left: 140px;
+   font-size: 20px;
+  padding-top: 20px;
+  display: inline-block;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 360px) {
+    body{
+        background-color: #79589f;
+        width: 100%;
+        height: 100vh;
+        
+    }
+
+    img{
+        margin-top: 30px;
+        color: #fff;
+        text-align: center;
+        width: 150px;
+        margin-left: 60px;
+    }
+    
+
+    form{
+
+        margin-left: 10px;
+        margin-top: 20px;
+        border: 1px solid black;
+        width: 250px;
+        padding: 30px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+    
+    }
+    
+
+    h3{
+        color: #664986;
+        font-size: 14px;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    label{
+        padding-bottom: 10px;
+        display: inline-block;
+        color: #62748e;
+        font-size: 16px;
+        }
+        
+    input{
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px 10px;
+        border-color: black;
+       font-size: 13px;
+    }
+
+    #btn{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        background-color: #79589f;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    
+    #btn:hover{
+        border-color: #60467e;
+    }
+
+    a{
+        margin-left: 20px;
+        font-size: 13px;
+       padding-top: 10px;
+       display: inline-block;
+       letter-spacing: 1px;
+       text-decoration: none;
+     }
+
+     #message{
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
