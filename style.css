@@ -45,7 +45,23 @@ img{
     outline: none;
 }
 
+#btn2{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #79589f;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
 #btn:hover{
+    border-color: #60467e;
+}
+
+#btn2:hover{
     border-color: #60467e;
 }
 label{
@@ -75,6 +91,13 @@ h3{
     text-align: center;
     margin-top: 20px;
 }
+
+#message2{
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 a{
    margin-left: 140px;
@@ -151,7 +174,23 @@ a{
         outline: none;
     }
     
+    #btn2{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        background-color: #79589f;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    
     #btn:hover{
+        border-color: #60467e;
+    }
+
+    #btn2:hover{
         border-color: #60467e;
     }
 
@@ -165,6 +204,12 @@ a{
      }
 
      #message{
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #message2{
         font-size: 14px;
         text-align: center;
         margin-top: 10px;

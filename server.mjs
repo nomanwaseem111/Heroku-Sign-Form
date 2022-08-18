@@ -57,6 +57,64 @@ app.post('/signup', (req, res) => {
 })
 
 
+app.post('/login', (req, res) => {
+
+    let body = req.body;
+
+    if (!body.email || !body.password) {
+
+        res.status(400).send(`
+         Required all Field, for example
+         
+         {
+          
+            email : "noman@abc.com",
+            password : "1234",
+         }
+         `)
+        return;
+    }
+
+    let isFound = false;
+
+    for (let i = 0; i < userBase.length; i++) {
+
+        if (userBase[i].email === body.email) {
+
+            isFound = true;
+            if (userBase[i].password === body.password) {
+
+
+                res.status(200).send(
+                    {
+
+                        firstname: userBase[i].firstname,
+                        lastname: userBase[i].lastname,
+                        email: userBase[i].email,
+                        message: "Login Successful"
+                    })
+                return
+
+            } else {
+                res.status(404).send('Password Incorrect')
+
+            }
+            return;
+
+        }
+    }
+
+
+    if (!isFound) {
+        res.status(401).send({ message: 'user not Found' });
+        return;
+    }
+
+
+
+})
+
+
 
 
 app.listen(port, () => {
