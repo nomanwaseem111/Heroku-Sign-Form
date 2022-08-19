@@ -38,7 +38,7 @@ app.post('/signup', (req, res) => {
         }
     }
     if (isFound) {
-        res.status(400).send({message : "This Email Id is Already Exist"});
+        res.status(400).send({ message: "This Email Id is Already Exist" });
     }
 
 
@@ -96,7 +96,7 @@ app.post('/login', (req, res) => {
                 return
 
             } else {
-                res.status(404).send('Password Incorrect')
+                res.status(404).send({message : 'The email address or password you entered is\n\'t connected to an account. Find your account and log in.'})
 
             }
             return;
@@ -106,7 +106,7 @@ app.post('/login', (req, res) => {
 
 
     if (!isFound) {
-        res.status(401).send({ message: 'user not Found' });
+        res.status(401).send({ message: 'Please Enter Email Address and Password' });
         return;
     }
 
